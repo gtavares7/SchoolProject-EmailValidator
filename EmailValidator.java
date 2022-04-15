@@ -71,9 +71,9 @@ public class EmailValidator {
     // check if the Prefix is valid
     public boolean isValidPrefix(String prefix) {
 
-        char[] prefixAr = prefix.toCharArray();
+        char[] prefixArray = prefix.toCharArray();
 
-        for (char c : prefixAr) {
+        for (char c : prefixArray) {
 
             // check if prefix character is not valid
             if (!isValidPrefixChar(c)) {
@@ -83,6 +83,25 @@ public class EmailValidator {
         // if valid return true
         return true;
     }
+
+    // check if the domain is valid
+    public boolean isValidDomain(String domain) {
+
+        char[] domainArray = domain.toCharArray();
+
+        // split the domain at the period
+        String[] domainSplit = domain.split("\\.");
+
+        for (char c : domainArray) {
+
+            // check if the domain is not alphanumeric and if the first part and second part are not valid
+            if(!isValidDomainChar(c) || domainSplit[0].length() < 1 || domainSplit[1].length() < 2) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 
 
