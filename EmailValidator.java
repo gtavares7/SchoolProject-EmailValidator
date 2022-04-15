@@ -35,5 +35,21 @@ public class EmailValidator {
         }
     }
 
+    // check if email contains only one "@" symbol
+    public boolean exactlyOneAt(String email) {
+
+        int oneAt = 0;
+
+        // loop over email to check for an "@"
+        for (int i = 0; i < email.length(); i++) {
+            // if an "@" is found...
+            if (email.charAt(i) == '@') {
+                // ... increment the count by 1
+                oneAt =+ 1;
+            }
+        }
+        return oneAt == 1;
+    }
+
 
 }
