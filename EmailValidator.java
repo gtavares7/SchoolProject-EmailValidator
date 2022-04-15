@@ -119,7 +119,10 @@ public class EmailValidator {
     // Main method
     public static void main(String[] args) {
 
-        String email = args[0];
+        // String email = args[0];
+        Scanner emailInput = new Scanner(System.in);
+        System.out.println("Enter email: ");
+        String email = emailInput.next();
 
         EmailValidator e = new EmailValidator();
 
