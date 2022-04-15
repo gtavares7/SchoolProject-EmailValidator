@@ -102,6 +102,19 @@ public class EmailValidator {
         return true;
     }
 
+    // check if whole email is valid
+    public boolean isValidEmail(String email) {
+
+        String prefix = getPrefix(email);
+        String domain = getDomain(email);
+
+        // check if the email has exactly one "@" and if the prefix and domain are valid
+        if (exactlyOneAt(email) && isValidPrefix(prefix) && isValidDomain(domain)) {
+            return true:
+        } else {
+            return false;
+        }
+    }
 
 
 
