@@ -5,7 +5,7 @@ public class EmailValidator {
     // check if the characters in the email are alphanumeric
     public boolean isAlphanumeric(char c) {
 
-        // Check to see if a character is either a letter or a digit
+        // check to see if a character is either a letter or a digit
         if (Character.isDigit(c) || Character.isLetter(c)) {
             return true;
         } else {
@@ -67,6 +67,24 @@ public class EmailValidator {
         // return the domains after the "@"
         return emailSplit[1];
     }
+
+    // check if the Prefix is valid
+    public boolean isValidPrefix(String prefix) {
+
+        char[] prefixAr = prefix.toCharArray();
+
+        for (char c : prefixAr) {
+
+            // check if prefix character is not valid
+            if (!isValidPrefixChar(c)) {
+                return false;
+            }
+        }
+        // if valid return true
+        return true;
+    }
+
+
 
 
 }
